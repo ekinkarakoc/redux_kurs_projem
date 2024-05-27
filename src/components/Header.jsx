@@ -13,7 +13,29 @@ const Header = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Sepetim
           </Typography>
-          <ShoppingBasketIcon />
+          <Typography
+            component="div"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              width: 40,
+            }}
+          >
+            <Typography
+              component="h3"
+              sx={{
+                backgroundColor: "white",
+                color: "#1976d2",
+                width: 20,
+                textAlign: "center",
+                borderRadius: "10px",
+                marginLeft: "auto",
+              }}
+            >
+              0
+            </Typography>
+            <ShoppingBasketIcon />
+          </Typography>
         </Toolbar>
       </AppBar>
     </Box>
