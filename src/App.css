@@ -1,5 +1,47 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.card-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+
+.img{
+    width: 280px;
+    height: 300px;
+}
+
+.footer{
+    height: 200px;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+
+.header-div{
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.course-item-div{
+    margin-top: 30px;
+}
+
+
+.footer div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 30px;
+}
+
+
+
+.footer button{
+    padding: 10px 20px;
 }

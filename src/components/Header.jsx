@@ -4,12 +4,23 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const { quantity } = useSelector((store) => store.card);
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ display: "flex", alignItems: "center" }}>
-        <Toolbar sx={{ width: "70%" }}>
+    <Box sx={{ display: "flex", alignItems: "center" }}>
+      <AppBar
+        position="relative"
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          height: 110,
+          justifyContent: "center",
+        }}
+      >
+        <Toolbar sx={{ width: "50%" }}>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Sepetim
           </Typography>
@@ -26,13 +37,13 @@ const Header = () => {
               sx={{
                 backgroundColor: "white",
                 color: "#1976d2",
-                width: 20,
+                width: 25,
                 textAlign: "center",
-                borderRadius: "10px",
+                borderRadius: "50%",
                 marginLeft: "auto",
               }}
             >
-              0
+              {quantity}
             </Typography>
             <ShoppingBasketIcon />
           </Typography>
