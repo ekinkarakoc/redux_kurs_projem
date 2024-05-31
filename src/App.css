@@ -19,16 +19,51 @@
     margin-top: 50px;
 }
 
+.quantity{
+    padding-right: 10px;
+}
+
+.title-price{
+    margin-bottom: 20px;
+}
+
+.button{
+    border:none;
+    background-color: white;
+}
+.item-map{
+    margin-bottom: 100px;
+}
+
+.actions-div{
+    text-align: end;
+}
 
 
 .header-div{
-    margin-top: 30px;
+    margin-top: 80px;
     text-align: center;
 }
 
 
 .course-item-div{
     margin-top: 30px;
+}
+
+.price-up-down{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: end;
+    margin-top: 20px;
+}
+
+.delete-button{
+    padding: 10px 20px;
+    background-color: rgb(225, 96, 96);
+    border: none;
+    border-radius: 10px;
+    color: white;
 }
 
 

@@ -18,7 +18,7 @@ const CourseList = () => {
           <header className="header-div">
             <h2>Sepetim</h2>
           </header>
-          <div>
+          <div className="item-map">
             {cardItems.map((item) => {
               return (
                 <div key={item.id} className="course-item-div">
@@ -33,8 +33,8 @@ const CourseList = () => {
               );
             })}
           </div>
+          <hr />
           <footer className="footer">
-            <hr />
             <div>
               <div>
                 <h4>

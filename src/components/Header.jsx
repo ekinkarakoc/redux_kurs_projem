@@ -20,7 +20,7 @@ const Header = () => {
           justifyContent: "center",
         }}
       >
-        <Toolbar sx={{ width: "50%" }}>
+        <Toolbar sx={{ width: "65%" }}>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Sepetim
           </Typography>
