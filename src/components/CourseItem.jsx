@@ -1,9 +1,13 @@
 import "../App.css";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { useDispatch } from "react-redux";
+import { removeItem } from "../control/cardSlice";
 
 const CourseItem = (props) => {
   const { title, id, quantity, img, price } = props;
+
+  const dispatch = useDispatch();
   return (
     <>
       <div className="card-div">
@@ -21,7 +25,14 @@ const CourseItem = (props) => {
             <button className="button">
               <ArrowDropDownIcon />
             </button>
-            <button className="delete-button">sil</button>
+            <button
+              className="delete-button"
+              onClick={() => {
+                dispatch(removeItem(id));
+              }}
+            >
+              sil
+            </button>
           </div>
         </div>
       </div>
