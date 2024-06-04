@@ -2,7 +2,7 @@ import "../App.css";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useDispatch } from "react-redux";
-import { removeItem } from "../control/cardSlice";
+import { removeItem, increase, decrease } from "../control/cardSlice";
 
 const CourseItem = (props) => {
   const { title, id, quantity, img, price } = props;
@@ -18,11 +18,21 @@ const CourseItem = (props) => {
           <h3 className="title-price">{title}</h3>
           <h4>{price} TL</h4>
           <div className="price-up-down">
-            <button className="button">
+            <button
+              className="button"
+              onClick={() => {
+                dispatch(increase(id));
+              }}
+            >
               <ArrowDropUpIcon />
             </button>
             <p className="quantity">{quantity}</p>
-            <button className="button">
+            <button
+              className="button"
+              onClick={() => {
+                dispatch(decrease(id));
+              }}
+            >
               <ArrowDropDownIcon />
             </button>
             <button

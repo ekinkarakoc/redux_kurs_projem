@@ -15,14 +15,27 @@ const cardSlice = createSlice({
       state.cardItems = [];
     },
     removeItem: (state, action) => {
-      console.log(action);
       state.cardItems = state.cardItems.filter(
         (item) => item.id !== action.payload
       );
     },
+    increase: (state, action) => {
+      const increaseCard = state.cardItems.find((item) => {
+        return item.id == action.payload;
+      });
+      increaseCard.quantity++;
+    },
+    decrease: (state, action) => {
+      const decreaseCard = state.cardItems.filter((item) => {
+        return item.id == action.payload;
+      });
+      if (decreaseCard[0].quantity > 0) {
+        decreaseCard[0].quantity--;
+      }
+    },
   },
 });
 
-export const { clearCard, removeItem } = cardSlice.actions;
+export const { clearCard, removeItem, increase, decrease } = cardSlice.actions;
 
 export default cardSlice.reducer;

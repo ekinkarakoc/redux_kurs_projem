@@ -7,8 +7,6 @@ const CourseList = () => {
     (store) => store.card
   );
 
-  console.log(useSelector((store) => store.card));
-
   const dispatch = useDispatch();
 
   return (
