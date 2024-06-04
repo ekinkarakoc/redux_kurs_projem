@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import CourseItem from "./CourseItem";
-import { clearCard } from "../control/cardSlice";
+import { addAll, clearCard } from "../control/cardSlice";
 
 const CourseList = () => {
   const { quantity, cardItems, totalPrice } = useSelector(
@@ -15,6 +15,13 @@ const CourseList = () => {
         <section>
           <header className="header-div">
             <h2>sepet boş</h2>
+            <button
+              onClick={() => {
+                dispatch(addAll());
+              }}
+            >
+              Her Kurstan Bir Adet Ekle
+            </button>
           </header>
         </section>
       ) : (

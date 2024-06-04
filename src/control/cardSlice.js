@@ -3,8 +3,8 @@ import courseItems from "../assets/courseItems";
 
 const initialState = {
   cardItems: courseItems,
-  quantity: 3,
-  totalPrice: 7,
+  quantity: 0,
+  totalPrice: 0,
 };
 
 const cardSlice = createSlice({
@@ -33,9 +33,29 @@ const cardSlice = createSlice({
         decreaseCard[0].quantity--;
       }
     },
+    calculatePrice: (state) => {
+      let total = 0;
+      let quantity = 0;
+      state.cardItems.map((item) => {
+        total += item.quantity * item.price;
+        quantity += item.quantity;
+      });
+      state.quantity = quantity;
+      state.totalPrice = total;
+    },
+    addAll: (state) => {
+      state.cardItems = courseItems;
+    },
   },
 });
 
-export const { clearCard, removeItem, increase, decrease } = cardSlice.actions;
+export const {
+  clearCard,
+  removeItem,
+  increase,
+  decrease,
+  calculatePrice,
+  addAll,
+} = cardSlice.actions;
 
 export default cardSlice.reducer;
